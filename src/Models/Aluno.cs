@@ -1,12 +1,25 @@
-class Aluno : Pessoa
+class Aluno : Usuario
 {
-    public string Plano { get; set; }
-    public DateTime DataMatricula { get; set; }
+    public string Matricula { get; set; }
+    public string Objetivo { get; set; }
+    public NivelTreino NivelTreino { get; set; }
+    public DateTime DataInicioPlano { get; set; }
+    public DateTime DataFimPlano { get; set; }
+    public StatusPlano StatusPlano { get; set; }
 
-    public Aluno(string nome, int idade, string email, string cpf, string plano)
-        : base(nome, idade, email, cpf)
+    public Aluno(string nome, string email, string cpf, string telefone, 
+                 DateTime dataNascimento, string objetivo, NivelTreino nivelTreino)
+        : base(nome, email, cpf, telefone, dataNascimento)
     {
-        this.Plano = plano;
-        this.DataMatricula = DateTime.Now;
+        this.Matricula = GerarMatricula();
+        this.Objetivo = objetivo;
+        this.NivelTreino = nivelTreino;
+        this.DataInicioPlano = DateTime.Now;
+        this.StatusPlano = StatusPlano.Ativo;
+    }
+
+    private string GerarMatricula()
+    {
+        return "FIT" + DateTime.Now.ToString("yyyyMMddHHmmss");
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leonardo\\OneDrive\\Documentos\\projetos\\fitcore\\src\\FitCore.csproj": {}
+    "C:\\Users\\leonardo\\OneDrive\\Documentos\\projetos\\FitCore\\src\\FitCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leonardo\\OneDrive\\Documentos\\projetos\\fitcore\\src\\FitCore.csproj": {
+    "C:\\Users\\leonardo\\OneDrive\\Documentos\\projetos\\FitCore\\src\\FitCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leonardo\\OneDrive\\Documentos\\projetos\\fitcore\\src\\FitCore.csproj",
+        "projectUniqueName": "C:\\Users\\leonardo\\OneDrive\\Documentos\\projetos\\FitCore\\src\\FitCore.csproj",
         "projectName": "FitCore",
-        "projectPath": "C:\\Users\\leonardo\\OneDrive\\Documentos\\projetos\\fitcore\\src\\FitCore.csproj",
+        "projectPath": "C:\\Users\\leonardo\\OneDrive\\Documentos\\projetos\\FitCore\\src\\FitCore.csproj",
         "packagesPath": "C:\\Users\\leonardo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leonardo\\OneDrive\\Documentos\\projetos\\fitcore\\src\\obj\\",
+        "outputPath": "C:\\Users\\leonardo\\OneDrive\\Documentos\\projetos\\FitCore\\src\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leonardo\\AppData\\Roaming\\NuGet\\NuGet.Config"

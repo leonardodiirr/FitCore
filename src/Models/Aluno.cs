@@ -3,6 +3,7 @@ class Aluno : Usuario
     public string Matricula { get; set; }
     public string Objetivo { get; set; }
     public NivelTreino NivelTreino { get; set; }
+    public Plano Plano { get; set; }
     public DateTime DataInicioPlano { get; set; }
     public DateTime DataFimPlano { get; set; }
     public StatusPlano StatusPlano { get; set; }
@@ -17,6 +18,7 @@ class Aluno : Usuario
         this.Matricula = GerarMatricula();
         this.Objetivo = objetivo;
         this.NivelTreino = nivelTreino;
+        this.Plano = null;
         this.DataInicioPlano = DateTime.Now;
         this.StatusPlano = StatusPlano.Ativo;
         this.Treinos = new List<Treino>();

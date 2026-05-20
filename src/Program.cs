@@ -321,7 +321,8 @@ void VerTreino(List<Aluno> alunos)
     }
 
     foreach (Treino treino in aluno.Treinos)
-    {Console.WriteLine($"Treino: {treino.Nome}");
+    {
+        Console.WriteLine($"Treino: {treino.Nome}");
         Console.WriteLine($"Objetivo: {treino.Objetivo}");
         Console.WriteLine($"Nível: {treino.Nivel}");
         Console.WriteLine($"Professor: {treino.Professor.Nome}");

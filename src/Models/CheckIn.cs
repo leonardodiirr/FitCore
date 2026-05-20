@@ -11,4 +11,9 @@ class CheckIn
         this.DataHoraEntrada = DateTime.Now;
         this.DataHoraSaida = null;
     }
+
+    public void RegistrarSaida()
+{
+    this.DataHoraSaida = DateTime.Now;
+}
 }

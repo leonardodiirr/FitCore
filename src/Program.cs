@@ -22,7 +22,7 @@ while (rodando)
     Console.WriteLine("╚══════════════════==═══╝");
     Console.Write("\nEscolha: ");
 
-    string opcao = Console.ReadLine();
+    string opcao = Console.ReadLine()!;
 
     switch (opcao)
     {
@@ -63,16 +63,16 @@ void CadastrarPlano(List<Plano> planos)
     Console.WriteLine("=== Cadastrar Plano ===\n");
 
     Console.Write("Nome: ");
-    string nome = Console.ReadLine();
+    string nome = Console.ReadLine()!;
 
     Console.Write("Descrição: ");
-    string descricao = Console.ReadLine();
+    string descricao = Console.ReadLine()!;
 
     Console.Write("Preço: ");
-    decimal preco = decimal.Parse(Console.ReadLine());
+    decimal preco = decimal.Parse(Console.ReadLine()!);
 
     Console.Write("Duração em meses: ");
-    int duracao = int.Parse(Console.ReadLine());
+    int duracao = int.Parse(Console.ReadLine()!);
 
     Plano plano = new Plano(nome, descricao, preco, duracao);
     planos.Add(plano);
@@ -87,20 +87,20 @@ void CadastrarExercicio(List<ExercicioCatalogo> exercicios)
     Console.WriteLine("=== Cadastrar Exercício ===\n");
 
     Console.Write("Nome: ");
-    string nome = Console.ReadLine();
+    string nome = Console.ReadLine()!;
 
     Console.Write("Grupo Muscular: ");
-    string grupoMuscular = Console.ReadLine();
+    string grupoMuscular = Console.ReadLine()!;
 
     Console.Write("Descrição: ");
-    string descricao = Console.ReadLine();
+    string descricao = Console.ReadLine()!;
 
     Console.WriteLine("Nível de Dificuldade:");
     Console.WriteLine("0 - Iniciante");
     Console.WriteLine("1 - Intermediario");
     Console.WriteLine("2 - Avancado");
     Console.Write("Escolha: ");
-    NivelTreino nivel = (NivelTreino)int.Parse(Console.ReadLine());
+    NivelTreino nivel = (NivelTreino)int.Parse(Console.ReadLine()!);
 
     ExercicioCatalogo exercicio = new ExercicioCatalogo(nome, grupoMuscular, descricao, nivel);
     exercicios.Add(exercicio);
@@ -115,28 +115,28 @@ void CadastrarProfessor(List<Professor> professores)
     Console.WriteLine("=== Cadastrar Professor ===\n");
 
     Console.Write("Nome: ");
-    string nome = Console.ReadLine();
+    string nome = Console.ReadLine()!;
 
     Console.Write("Email: ");
-    string email = Console.ReadLine();
+    string email = Console.ReadLine()!;
 
     Console.Write("CPF: ");
-    string cpf = Console.ReadLine();
+    string cpf = Console.ReadLine()!;
 
     Console.Write("Telefone: ");
-    string telefone = Console.ReadLine();
+    string telefone = Console.ReadLine()!;
 
     Console.Write("Data de Nascimento (dd/MM/yyyy): ");
-    DateTime dataNascimento = DateTime.Parse(Console.ReadLine());
+    DateTime dataNascimento = DateTime.Parse(Console.ReadLine()!);
 
     Console.Write("CREF: ");
-    string cref = Console.ReadLine();
+    string cref = Console.ReadLine()!;
 
     Console.Write("Especialidade: ");
-    string especialidade = Console.ReadLine();
+    string especialidade = Console.ReadLine()!;
 
     Console.Write("Salário: ");
-    decimal salario = decimal.Parse(Console.ReadLine());
+    decimal salario = decimal.Parse(Console.ReadLine()!);
 
     Professor professor = new Professor(nome, email, cpf, telefone, dataNascimento, cref, especialidade, salario);
     professores.Add(professor);
@@ -158,29 +158,29 @@ void CadastrarAluno(List<Aluno> alunos, List<Plano> planos)
     }
 
     Console.Write("Nome: ");
-    string nome = Console.ReadLine();
+    string nome = Console.ReadLine()!;
 
     Console.Write("Email: ");
-    string email = Console.ReadLine();
+    string email = Console.ReadLine()!;
 
     Console.Write("CPF: ");
-    string cpf = Console.ReadLine();
+    string cpf = Console.ReadLine()!;
 
     Console.Write("Telefone: ");
-    string telefone = Console.ReadLine();
+    string telefone = Console.ReadLine()!;
 
     Console.Write("Data de Nascimento (dd/MM/yyyy): ");
-    DateTime dataNascimento = DateTime.Parse(Console.ReadLine());
+    DateTime dataNascimento = DateTime.Parse(Console.ReadLine()!);
 
     Console.Write("Objetivo: ");
-    string objetivo = Console.ReadLine();
+    string objetivo = Console.ReadLine()!;
 
     Console.WriteLine("\nNível de Treino:");
     Console.WriteLine("0 - Iniciante");
     Console.WriteLine("1 - Intermediario");
     Console.WriteLine("2 - Avancado");
     Console.Write("Escolha: ");
-    NivelTreino nivel = (NivelTreino)int.Parse(Console.ReadLine());
+    NivelTreino nivel = (NivelTreino)int.Parse(Console.ReadLine()!);
 
     Console.WriteLine("\nPlanos disponíveis:");
     for (int i = 0; i < planos.Count; i++)
@@ -188,7 +188,7 @@ void CadastrarAluno(List<Aluno> alunos, List<Plano> planos)
         Console.WriteLine($"{i} - {planos[i].Nome} | R$ {planos[i].Preco} | {planos[i].DuracaoMeses} meses");
     }
     Console.Write("Escolha o plano: ");
-    int indicePlano = int.Parse(Console.ReadLine());
+    int indicePlano = int.Parse(Console.ReadLine()!);
     Plano planoEscolhido = planos[indicePlano];
 
     Aluno aluno = new Aluno(nome, email, cpf, telefone, dataNascimento, objetivo, nivel);
@@ -216,29 +216,29 @@ void MontarTreino(List<Aluno> alunos, List<Professor> professores, List<Exercici
     for (int i = 0; i < professores.Count; i++)
         Console.WriteLine($"{i} - {professores[i].Nome}");
     Console.Write("Escolha o professor: ");
-    Professor professor = professores[int.Parse(Console.ReadLine())];
+    Professor professor = professores[int.Parse(Console.ReadLine()!)];
 
     Console.WriteLine("\nAlunos:");
     for (int i = 0; i < alunos.Count; i++)
         Console.WriteLine($"{i} - {alunos[i].Nome}");
     Console.Write("Escolha o aluno: ");
-    Aluno aluno = alunos[int.Parse(Console.ReadLine())];
+    Aluno aluno = alunos[int.Parse(Console.ReadLine()!)];
 
     Console.Write("\nNome do treino: ");
-    string nome = Console.ReadLine();
+    string nome = Console.ReadLine()!;
 
     Console.Write("Objetivo: ");
-    string objetivo = Console.ReadLine();
+    string objetivo = Console.ReadLine()!;
 
     Console.WriteLine("\nNível:");
     Console.WriteLine("0 - Iniciante");
     Console.WriteLine("1 - Intermediario");
     Console.WriteLine("2 - Avancado");
     Console.Write("Escolha: ");
-    NivelTreino nivel = (NivelTreino)int.Parse(Console.ReadLine());
+    NivelTreino nivel = (NivelTreino)int.Parse(Console.ReadLine()!);
 
     Console.Write("\nValidade do treino (dd/MM/yyyy): ");
-    DateTime dataValidade = DateTime.Parse(Console.ReadLine());
+    DateTime dataValidade = DateTime.Parse(Console.ReadLine()!);
 
     Treino treino = new Treino(professor, aluno, nome, objetivo, nivel, dataValidade);
 
@@ -255,7 +255,7 @@ void MontarTreino(List<Aluno> alunos, List<Professor> professores, List<Exercici
             Console.WriteLine($"{i} - {exercicios[i].Nome} | {exercicios[i].GrupoMuscular}");
 
         Console.Write("\nEscolha o exercício (-1 para terminar): ");
-        int indice = int.Parse(Console.ReadLine());
+        int indice = int.Parse(Console.ReadLine()!);
 
         if (indice == -1)
         {
@@ -266,16 +266,16 @@ void MontarTreino(List<Aluno> alunos, List<Professor> professores, List<Exercici
         ExercicioCatalogo exercicioEscolhido = exercicios[indice];
 
         Console.Write("Séries: ");
-        int series = int.Parse(Console.ReadLine());
+        int series = int.Parse(Console.ReadLine()!);
 
         Console.Write("Repetições: ");
-        int repeticoes = int.Parse(Console.ReadLine());
+        int repeticoes = int.Parse(Console.ReadLine()!);
 
         Console.Write("Carga (kg): ");
-        double carga = double.Parse(Console.ReadLine());
+        double carga = double.Parse(Console.ReadLine()!);
 
         Console.Write("Descanso (segundos): ");
-        int descanso = int.Parse(Console.ReadLine());
+        int descanso = int.Parse(Console.ReadLine()!);
 
         TreinoExercicio te = new TreinoExercicio(exercicioEscolhido, ordem, series, repeticoes, carga, descanso);
         treino.Exercicios.Add(te);
@@ -308,7 +308,7 @@ void VerTreino(List<Aluno> alunos)
     for (int i = 0; i < alunos.Count; i++)
         Console.WriteLine($"{i} - {alunos[i].Nome}");
     Console.Write("Escolha o aluno: ");
-    Aluno aluno = alunos[int.Parse(Console.ReadLine())];
+    Aluno aluno = alunos[int.Parse(Console.ReadLine()!)];
 
     Console.Clear();
     Console.WriteLine($"=== Treinos de {aluno.Nome} ===\n");
@@ -354,7 +354,7 @@ void RegistrarCheckIn(List<Aluno> alunos)
     for (int i = 0; i < alunos.Count; i++)
         Console.WriteLine($"{i} - {alunos[i].Nome}");
     Console.Write("Escolha o aluno: ");
-    Aluno aluno = alunos[int.Parse(Console.ReadLine())];
+    Aluno aluno = alunos[int.Parse(Console.ReadLine()!)];
 
     CheckIn checkIn = new CheckIn(aluno);
     aluno.CheckIns.Add(checkIn);

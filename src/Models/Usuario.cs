@@ -1,7 +1,7 @@
 class Usuario
 {
     private int _id;
-       public int Id
+    public int Id
     {
         get { return _id; }
         set
@@ -16,16 +16,16 @@ class Usuario
 
     public string Nome { get; set; }
     public string Email { get; set; }
-    public string Cpf { get; set; } 
+    public string Cpf { get; set; }
     public string Telefone { get; set; }
     public DateTime DataNascimento { get; set; }
     public bool Ativo { get; set; }
     public DateTime DataCriacao { get; set; }
 
- 
 
 
-  public Usuario(string nome, string email, string cpf, string telefone, DateTime dataNascimento)
+
+    public Usuario(string nome, string email, string cpf, string telefone, DateTime dataNascimento)
     {
         this.Nome = nome;
         this.Email = email;
@@ -45,7 +45,7 @@ class Usuario
         return idade;
     }
 
-   public void ExibirInformacoes()
+    public void ExibirInformacoes()
     {
         Console.WriteLine($"Nome: {Nome}");
         Console.WriteLine($"Email: {Email}");

@@ -1,18 +1,6 @@
 class ExercicioCatalogo
 {
-    private int _id;
-    public int Id
-    {
-        get { return _id; }
-        set
-        {
-            if (value > 0)
-                _id = value;
-            else
-                throw new ArgumentException("Id deve ser maior que zero.");
-        }
-    }
-
+    public int Id { get; set; }
     public string Nome { get; set; }
     public string GrupoMuscular { get; set; }
     public string Descricao { get; set; }

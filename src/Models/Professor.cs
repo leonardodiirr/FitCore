@@ -14,4 +14,12 @@ class Professor : Usuario
         this.Salario = salario;
         this.Treinos = new List<Treino>();
     }
+
+    public override void ExibirInformacoes()
+    {
+        base.ExibirInformacoes();
+        Console.WriteLine($"CREF: {Cref}");
+        Console.WriteLine($"Especialidade: {Especialidade}");
+        Console.WriteLine($"Salário: R$ {Salario:F2}");
+    }
 }

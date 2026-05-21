@@ -3,7 +3,7 @@ class Aluno : Usuario
     public string Matricula { get; set; }
     public string Objetivo { get; set; }
     public NivelTreino NivelTreino { get; set; }
-    public Plano Plano { get; set; }
+    public Plano? Plano { get; set; }
     public DateTime DataInicioPlano { get; set; }
     public DateTime DataFimPlano { get; set; }
     public StatusPlano StatusPlano { get; set; }
@@ -29,5 +29,17 @@ class Aluno : Usuario
     private string GerarMatricula()
     {
         return "FIT" + DateTime.Now.ToString("yyyyMMddHHmmss");
+    }
+
+    public override void ExibirInformacoes()
+    {
+        base.ExibirInformacoes();
+        Console.WriteLine($"Matrícula: {Matricula}");
+        Console.WriteLine($"Objetivo: {Objetivo}");
+        Console.WriteLine($"Nível: {NivelTreino}");
+        Console.WriteLine($"Plano: {Plano?.Nome ?? "Sem plano"}");
+        Console.WriteLine($"Status do Plano: {StatusPlano}");
+        Console.WriteLine($"Início do Plano: {DataInicioPlano:dd/MM/yyyy}");
+        Console.WriteLine($"Fim do Plano: {DataFimPlano:dd/MM/yyyy}");
     }
 }

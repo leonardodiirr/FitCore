@@ -45,7 +45,7 @@ class Usuario
         return idade;
     }
 
-    public void ExibirInformacoes()
+    public virtual void ExibirInformacoes()
     {
         Console.WriteLine($"Nome: {Nome}");
         Console.WriteLine($"Email: {Email}");

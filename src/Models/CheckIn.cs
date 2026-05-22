@@ -13,7 +13,7 @@ class CheckIn
     }
 
     public void RegistrarSaida()
-{
-    this.DataHoraSaida = DateTime.Now;
-}
+    {
+        this.DataHoraSaida = DateTime.Now;
+    }
 }

@@ -1,4 +1,4 @@
-class Aluno : Usuario
+class Aluno : Usuario, IExibeTreino
 {
     public string Matricula { get; set; }
     public string Objetivo { get; set; }
@@ -41,5 +41,20 @@ class Aluno : Usuario
         Console.WriteLine($"Status do Plano: {StatusPlano}");
         Console.WriteLine($"Início do Plano: {DataInicioPlano:dd/MM/yyyy}");
         Console.WriteLine($"Fim do Plano: {DataFimPlano:dd/MM/yyyy}");
+    }
+
+    public void ExibirTreino()
+    {
+        if (Treinos.Count == 0)
+        {
+            Console.WriteLine($"{Nome} não tem treinos registrados.");
+            return;
+        }
+
+        Console.WriteLine($"Treinos de {Nome}:");
+        foreach (Treino treino in Treinos)
+        {
+            Console.WriteLine($"--> {treino.Nome} | ({treino.Nivel}) | Validade: {treino.DataValidade:dd/MM/yyyy}");
+        }
     }
 }

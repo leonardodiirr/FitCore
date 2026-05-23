@@ -57,4 +57,9 @@ class Aluno : Usuario, IExibeTreino
             Console.WriteLine($"--> {treino.Nome} | ({treino.Nivel}) | Validade: {treino.DataValidade:dd/MM/yyyy}");
         }
     }
+
+    public override string GerarResumo()
+    {
+        return $"Aluno: {Nome} | Matrícula: {Matricula} | Plano: {Plano?.Nome ?? "Sem plano"} | Status: {StatusPlano}";
+    }
 }

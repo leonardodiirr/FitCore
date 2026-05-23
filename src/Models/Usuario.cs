@@ -1,4 +1,4 @@
-class Usuario
+abstract class Usuario
 {
     private int _id;
     public int Id
@@ -54,4 +54,7 @@ class Usuario
         Console.WriteLine($"Idade: {CalcularIdade()} anos");
         Console.WriteLine($"Ativo: {Ativo}");
     }
+
+    public abstract string GerarResumo();
+
 }

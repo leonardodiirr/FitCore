@@ -36,4 +36,9 @@ class Professor : Usuario, IExibeTreino
             Console.WriteLine($"--> {treino.Nome} | Aluno: {treino.Aluno?.Nome ?? "Não especificado"} | Validade: {treino.DataValidade:dd/MM/yyyy}");
         }
     }
+
+    public override string GerarResumo()
+    {
+        return $"Professor: {Nome} | Especialidade: {Especialidade} | Treinos Montados: {Treinos.Count}";
+    }
 }

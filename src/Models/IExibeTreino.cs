@@ -1,0 +1,4 @@
+interface IExibeTreino
+{
+    void ExibirTreino();
+}

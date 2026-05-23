@@ -8,18 +8,19 @@ bool rodando = true;
 while (rodando)
 {
     Console.Clear();
-    Console.WriteLine("╔════════════════════=══╗");
-    Console.WriteLine("║      FitCore          ║");
-    Console.WriteLine("╠════════════════════=══╣");
-    Console.WriteLine("║ 1. Cadastrar Aluno    ║");
-    Console.WriteLine("║ 2. Cadastrar Professor║");
-    Console.WriteLine("║ 3. Cadastrar Plano    ║");
-    Console.WriteLine("║ 4. Cadastrar Exercício║");
-    Console.WriteLine("║ 5. Montar Treino      ║");
-    Console.WriteLine("║ 6. Ver Treino         ║");
-    Console.WriteLine("║ 7. Registrar Check-in ║");
-    Console.WriteLine("║ 0. Sair               ║");
-    Console.WriteLine("╚══════════════════==═══╝");
+    Console.WriteLine("╔═════════════════════=══╗");
+    Console.WriteLine("║      FitCore           ║");
+    Console.WriteLine("╠════════════════════=═══╣");
+    Console.WriteLine("║ 1. Cadastrar Aluno     ║");
+    Console.WriteLine("║ 2. Cadastrar Professor ║");
+    Console.WriteLine("║ 3. Cadastrar Plano     ║");
+    Console.WriteLine("║ 4. Cadastrar Exercício ║");
+    Console.WriteLine("║ 5. Montar Treino       ║");
+    Console.WriteLine("║ 6. Ver Treino          ║");
+    Console.WriteLine("║ 7. Registrar Check-in  ║");
+    Console.WriteLine("║ 8. Listar Inadimplentes║");
+    Console.WriteLine("║ 0. Sair                ║");
+    Console.WriteLine("╚═══════════════════==═══╝");
     Console.Write("\nEscolha: ");
 
     string opcao = Console.ReadLine()!;
@@ -46,6 +47,9 @@ while (rodando)
             break;
         case "7":
             RegistrarCheckIn(alunos);
+            break;
+        case "8":
+            ListarInadimplentes(alunos);
             break;
         case "0":
             rodando = false;
@@ -361,4 +365,31 @@ void RegistrarCheckIn(List<Aluno> alunos)
 
     Console.WriteLine($"\nCheck-in registrado para {aluno.Nome} às {checkIn.DataHoraEntrada:HH:mm}!");
     Console.ReadKey();
+}
+
+void ListarInadimplentes(List<Aluno> alunos)
+{
+    Console.Clear();
+    Console.WriteLine("=== Alunos Inadimplentes ===\n");
+
+    List<Aluno> inadimplentes = alunos
+        .Where(a => a.StatusPlano == StatusPlano.Inadimplente)
+        .OrderBy(a => a.Nome)
+        .ToList();
+
+    if (inadimplentes.Count == 0)
+    {
+        Console.WriteLine("Nenhum aluno inadimplente.");
+        Console.ReadKey();
+        return;
+    }
+
+    foreach (Aluno aluno in inadimplentes)
+    {
+        Console.WriteLine(aluno.GerarResumo());
+    }
+
+    Console.WriteLine($"\nTotal de inadimplentes: {inadimplentes.Count} aluno(s) inadimplente(s).");
+    Console.ReadKey();
+    
 }

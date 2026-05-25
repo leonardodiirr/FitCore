@@ -1,11 +1,11 @@
-# 💪 FitCore — Sistema de Gestão de Academia
+# FitCore — Sistema de Gestão de Academia
 
 > Sistema completo de gestão para academias de musculação, desenvolvido em C# / .NET.  
 > Projeto em evolução contínua: do console à API REST, do Docker ao Kubernetes.
 
 ---
 
-## 📋 Sobre o Projeto
+## Sobre o Projeto
 
 O FitCore é um sistema de gestão para academias de musculação. Permite cadastrar alunos, professores e planos, montar treinos personalizados, registrar check-ins e controlar pagamentos.
 
@@ -13,7 +13,7 @@ O projeto está sendo construído de forma incremental, acompanhando a evoluçã
 
 ---
 
-## 🚀 Status do Projeto
+## Status do Projeto
 
 | Fase | Descrição | Status |
 |------|-----------|--------|
@@ -26,7 +26,7 @@ O projeto está sendo construído de forma incremental, acompanhando a evoluçã
 
 ---
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 ### V1 — Atualmente em uso
 - **C# / .NET 8** — Linguagem e plataforma
@@ -45,7 +45,7 @@ O projeto está sendo construído de forma incremental, acompanhando a evoluçã
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 FitCore/
@@ -72,7 +72,7 @@ FitCore/
 
 ---
 
-## ⚙️ Como Rodar Localmente
+## Como Rodar Localmente
 
 ### Pré-requisitos
 - [.NET SDK 8](https://dotnet.microsoft.com/download) instalado
@@ -92,7 +92,7 @@ dotnet run
 
 ---
 
-## 🗂️ Como Usar o Sistema
+## Como Usar o Sistema
 
 O sistema é um menu interativo no console. **Siga essa ordem** ao usar pela primeira vez — algumas funcionalidades dependem de dados já cadastrados.
 
@@ -171,19 +171,19 @@ Registra a entrada do aluno na academia com horário automático.
 - [x] Registro de check-in com horário automático
 - [x] Controle de pagamentos com status e forma de pagamento
 
-### ⏳ V2 — API REST
+### V2 — API REST
 - [ ] API REST com ASP.NET Core
 - [ ] Banco de dados MySQL com Entity Framework
 - [ ] Autenticação JWT com roles (professor vs aluno)
 - [ ] Swagger para documentação
 
-### ⏳ V3 — Frontend
+### V3 — Frontend
 - [ ] Dashboard web com Bootstrap
 - [ ] Tela de login
 - [ ] Interface para montagem de treino
 - [ ] Modo treino para o aluno
 
-### ⏳ V4 — Sistema Completo
+### V4 — Sistema Completo
 - [ ] Frontend moderno com React e Next.js
 - [ ] App mobile com React Native
 - [ ] Docker + CI/CD
@@ -192,7 +192,7 @@ Registra a entrada do aluno na academia com horário automático.
 
 ---
 
-## 🏗️ Arquitetura de Classes (V1)
+## Arquitetura de Classes (V1)
 
 ```
 Usuario (classe base)
@@ -210,7 +210,7 @@ CheckIn           — registro de entrada e saída
 
 ---
 
-## 🧠 Conceitos Aplicados
+## Conceitos Aplicados
 
 - Herança — `Aluno` e `Professor` herdam de `Usuario`
 - Encapsulamento — atributos privados com properties
@@ -222,7 +222,7 @@ CheckIn           — registro de entrada e saída
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 **Leonardo**  
 Estudante de Análise e Desenvolvimento de Sistemas  
@@ -230,6 +230,6 @@ Focado em Backend .NET e Cloud/DevOps
 
 
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT.

@@ -159,7 +159,7 @@ Registra a entrada do aluno na academia com horário automático.
 
 ---
 
-## 📌 Funcionalidades
+## Funcionalidades
 
 ### ✅ V1 — Console App
 - [x] Cadastro de alunos com matrícula gerada automaticamente

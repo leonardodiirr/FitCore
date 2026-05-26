@@ -3,24 +3,28 @@ List<Professor> professores = new List<Professor>();
 List<Plano> planos = new List<Plano>();
 List<ExercicioCatalogo> exercicios = new List<ExercicioCatalogo>();
 
+SeedData.Carregar(alunos, professores, planos, exercicios);
+
 bool rodando = true;
 
 while (rodando)
 {
     Console.Clear();
-    Console.WriteLine("╔═════════════════════=══╗");
-    Console.WriteLine("║      FitCore           ║");
-    Console.WriteLine("╠════════════════════=═══╣");
-    Console.WriteLine("║ 1. Cadastrar Aluno     ║");
-    Console.WriteLine("║ 2. Cadastrar Professor ║");
-    Console.WriteLine("║ 3. Cadastrar Plano     ║");
-    Console.WriteLine("║ 4. Cadastrar Exercício ║");
-    Console.WriteLine("║ 5. Montar Treino       ║");
-    Console.WriteLine("║ 6. Ver Treino          ║");
-    Console.WriteLine("║ 7. Registrar Check-in  ║");
-    Console.WriteLine("║ 8. Listar Inadimplentes║");
-    Console.WriteLine("║ 0. Sair                ║");
-    Console.WriteLine("╚═══════════════════==═══╝");
+    Console.WriteLine("╔═════════════════════════════════════════════=══╗");
+    Console.WriteLine("║      FitCore                                   ║");
+    Console.WriteLine("╠════════════════════════════════════════════=═══╣");
+    Console.WriteLine("║ 1. Cadastrar Aluno                             ║");
+    Console.WriteLine("║ 2. Cadastrar Professor                         ║");
+    Console.WriteLine("║ 3. Cadastrar Plano                             ║");
+    Console.WriteLine("║ 4. Cadastrar Exercício                         ║");
+    Console.WriteLine("║ 5. Montar Treino                               ║");
+    Console.WriteLine("║ 6. Ver Treino                                  ║");
+    Console.WriteLine("║ 7. Registrar Check-in                          ║");
+    Console.WriteLine("║ 8. Listar Inadimplentes                        ║");
+    Console.WriteLine("║ 9. Buscar aluno por nome                       ║");
+    Console.WriteLine("║ 10. Listar alunos com plano vencendo em 7 dias ║");
+    Console.WriteLine("║ 0. Sair                                        ║");
+    Console.WriteLine("╚═══════════════════════════════════════════==═══╝");
     Console.Write("\nEscolha: ");
 
     string opcao = Console.ReadLine()!;
@@ -50,6 +54,12 @@ while (rodando)
             break;
         case "8":
             ListarInadimplentes(alunos);
+            break;
+         case "9":
+            BuscarAluno(alunos);
+            break;
+         case "10":
+            ListarVencendoEmBreve(alunos);
             break;
         case "0":
             rodando = false;
@@ -392,4 +402,59 @@ void ListarInadimplentes(List<Aluno> alunos)
     Console.WriteLine($"\nTotal de inadimplentes: {inadimplentes.Count} aluno(s) inadimplente(s).");
     Console.ReadKey();
     
+}
+
+void BuscarAluno(List<Aluno> alunos)
+{
+    Console.Clear();
+    Console.WriteLine("=== Buscar Aluno por Nome ===\n");
+
+    Console.Write("Digite o nome do aluno: ");
+    string busca = Console.ReadLine()!;
+
+    List<Aluno> resultado = alunos
+        .Where(a => a.Nome.Contains(busca, StringComparison.OrdinalIgnoreCase))
+        .OrderBy(a => a.Nome)
+        .ToList();
+
+    if (resultado.Count == 0)
+    {
+        Console.WriteLine("Nenhum aluno encontrado.");
+        Console.ReadKey();
+        return;
+    }
+
+    foreach (Aluno aluno in resultado)
+    {
+        Console.WriteLine(aluno.GerarResumo());
+    }
+
+    Console.ReadKey();
+}
+
+void ListarVencendoEmBreve(List<Aluno> alunos)
+{
+    Console.Clear();
+    Console.WriteLine("=== Planos Vencendo em 7 Dias ===\n");
+
+    DateTime limite = DateTime.Now.AddDays(7);
+
+    List<Aluno> vencendo = alunos
+        .Where(a => a.StatusPlano == StatusPlano.Ativo && a.DataFimPlano <= limite)
+        .OrderBy(a => a.DataFimPlano)
+        .ToList();
+
+    if (vencendo.Count == 0)
+    {
+        Console.WriteLine("Nenhum plano vencendo nos próximos 7 dias.");
+        Console.ReadKey();
+        return;
+    }
+
+    foreach (Aluno aluno in vencendo)
+    {
+        Console.WriteLine($"{aluno.Nome} | Vence em: {aluno.DataFimPlano:dd/MM/yyyy}");
+    }
+
+    Console.ReadKey();
 }
